@@ -1,0 +1,8 @@
+boto3==1.7.26
+botocore==1.10.26
+docutils==0.14
+jmespath==0.9.3
+pycryptodome==3.6.1
+python-dateutil==2.7.3
+s3transfer==0.1.13
+six==1.11.0
