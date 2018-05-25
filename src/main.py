@@ -87,9 +87,6 @@ def create_secret(service_client, arn, token):
         ResourceNotFoundException: If the secret with the specified arn and stage does not exist
 
     """
-    # Make sure the current secret exists
-    service_client.get_secret_value(SecretId=arn, VersionStage="AWSCURRENT")
-
     # Now try to get the secret version, if that fails, put a new secret
     try:
         service_client.get_secret_value(SecretId=arn, VersionId=token, VersionStage="AWSPENDING")
