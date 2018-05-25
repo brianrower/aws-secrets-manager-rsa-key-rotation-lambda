@@ -1,0 +1,19 @@
+# Change the values in this file to configure your build and deployment
+
+# The s3 bucket name prefix for the s3 bucket you wish to deploy the lambda zip package to.
+# This will be appended with the region to make the bucket name
+# e.g. if your S3_BUCKET_PREFIX is 'my-custom-cloud-formation-bucket' and your AWS_REGION is 'eu-central-1'
+# the s3 bucket name will be 'my-custom-cloud-formation-bucket-eu-central-1'
+# You will need to create this bucket yourself
+S3_BUCKET_PREFIX=<YOUR BUCkET NAME PREFIX HERE>
+
+# The AWS region that all aws resources will deploy in
+AWS_REGION=us-west-2
+
+# True if you want the Lambda zip package public read to the world False if you don't
+PUBLIC=False
+
+# The name of the lambda function that make deploy-provider will create
+# When using the cfn provider you will need to reference this functions ARN
+# in the 'ServiceToken' property
+LAMBDA_NAME=cfn-secret-provider

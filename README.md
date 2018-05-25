@@ -11,7 +11,7 @@ If you want to store an RSA key pair in AWS Secrets Manager and have it automati
 ## How to deploy into your AWS account:
 1. git clone https://github.com/brianrower/aws-secrets-manager-rsa-key-rotation-lambda.git
 2. cd aws-secrets-manager-rsa-key-rotation-lambda
-3. export LAMBDA_PACKAGE_BUCKET=_INSERT YOUR BUCKET NAME HERE_
+3. Edit Makefile.user and fill in values for your region and s3 bucket
 4. make deploy-lambda
 
 ## What will 'make deploy-lambda' do?
@@ -35,4 +35,10 @@ you'll want to connect it with secrets in the secret manager, here's how to do t
     it will automatically run the rotation lambda to create an RSA key pair
 
 ### Option 2: CloudFormation
-* Coming Soon
+Using [cfn-secret-provider](https://github.com/brianrower/cfn-secret-provider) you can create a Cloud Formation template 
+that includes this RSA key rotation lambda and an AWS Secrets Manager secret that is created and rotated by this key
+lambda. See the [demo template](https://github.com/brianrower/aws-secrets-manager-rsa-key-rotation-lambda/blob/master/cloudformation/secrets-manager-secret-with-rotation.yaml)
+for an example showing this.
+
+### Contributing
+Suggestions, feature requests, and pull requests are welcome. Feel free to open an issue to get the ball rolling. 
